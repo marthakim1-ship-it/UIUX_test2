@@ -1,1 +1,332 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>[모아온] 1인 가구 식재료 정기배송 - 와이어프레임</title>
+    <!-- Tailwind CSS for rapid wireframing -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        moaon: {
+                            cream: '#FDFBF7',
+                            lightgreen: '#D4E2D4',
+                            darkgreen: '#2C4C3B',
+                            orange: '#F4A261',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Noto Sans KR', 'sans-serif'],
+                        serif: ['Noto Serif KR', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&family=Noto+Serif+KR:wght@700;900&display=swap" rel="stylesheet">
+    <style>
+        /* Hide scrollbar for gallery */
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+</head>
+<body class="bg-moaon-cream text-moaon-darkgreen font-sans antialiased">
 
+    <!-- 1. GNB -->
+    <nav class="sticky top-0 w-full bg-moaon-cream/90 backdrop-blur-md border-b border-moaon-darkgreen/10 z-50">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+            <div class="text-2xl font-black tracking-tighter">MOAON</div>
+            <ul class="hidden md:flex space-x-12 text-sm font-medium">
+                <li><a href="#intro" class="hover:text-moaon-orange transition">서비스 소개</a></li>
+                <li><a href="#product" class="hover:text-moaon-orange transition">상품 안내</a></li>
+                <li><a href="#faq" class="hover:text-moaon-orange transition">FAQ</a></li>
+            </ul>
+            <a href="#register" class="bg-moaon-darkgreen text-moaon-cream px-6 py-3 rounded-full text-sm font-bold hover:bg-moaon-orange transition">사전 신청하기</a>
+        </div>
+    </nav>
+
+    <!-- 2. Hero (메인 배너) - 에디토리얼 레이아웃 반영 -->
+    <header class="max-w-7xl mx-auto px-6 pt-24 pb-16">
+        <div class="text-center mb-16">
+            <h2 class="text-xl md:text-2xl font-medium mb-6">1인 가구를 위한 소량 식재료 정기배송</h2>
+            <h1 class="text-5xl md:text-8xl font-black tracking-tight leading-tight mb-8">
+                첫 배송 50% <br class="hidden md:block"/> 할인받기
+            </h1>
+            <a href="#register" class="inline-block border-2 border-moaon-darkgreen text-moaon-darkgreen hover:bg-moaon-darkgreen hover:text-moaon-cream px-10 py-4 font-bold text-lg rounded-full transition-all">
+                혜택받고 사전 신청하기 &rarr;
+            </a>
+        </div>
+        
+        <!-- 이미지 분할 영역 (레퍼런스 반영 2단 구조) -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-12">
+            <div class="bg-gray-200 aspect-[4/3] rounded-sm flex items-center justify-center text-gray-400">
+                [IMG: 신선한 1인분 식재료]
+            </div>
+            <div class="bg-gray-200 aspect-[4/3] rounded-sm flex items-center justify-center text-gray-400">
+                [IMG: 정돈된 1인 가구 주방]
+            </div>
+        </div>
+    </header>
+
+    <!-- 3. 공감 및 솔루션 -->
+    <section id="intro" class="py-24 border-t border-moaon-darkgreen/10">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+                <div>
+                    <h3 class="text-3xl md:text-5xl font-bold leading-snug mb-6">
+                        장 볼 시간은 없고,<br/>
+                        버려지는 식재료는<br/>
+                        아깝지 않으셨나요?
+                    </h3>
+                    <p class="text-lg text-moaon-darkgreen/70 mb-8">
+                        대용량 마트 장보기의 부담, 이제 모아온이 덜어드립니다.<br/>
+                        오직 1인 가구의 라이프스타일에 맞춘 소량 구성.
+                    </p>
+                </div>
+                <div class="bg-gray-200 aspect-square rounded-sm flex items-center justify-center text-gray-400">
+                    [IMG: 낭비 없는 냉장고 / 모아온 박스]
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. 이용 단계 안내 (새로 추가된 요구사항) -->
+    <section class="py-24 bg-moaon-lightgreen/30">
+        <div class="max-w-7xl mx-auto px-6">
+            <h3 class="text-3xl font-bold text-center mb-16">필요한 양만 간편하게, 모아온 이용 방법</h3>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Step 1 -->
+                <div class="text-center flex flex-col items-center">
+                    <div class="w-24 h-24 bg-moaon-cream rounded-full flex items-center justify-center text-2xl font-bold border-2 border-moaon-darkgreen mb-6">01</div>
+                    <h4 class="text-xl font-bold mb-3">내게 맞는 상품 선택</h4>
+                    <p class="text-moaon-darkgreen/70">채소, 간편식, 균형식 중<br/>내 라이프스타일에 맞게 고르세요.</p>
+                </div>
+                <!-- Step 2 -->
+                <div class="text-center flex flex-col items-center">
+                    <div class="w-24 h-24 bg-moaon-cream rounded-full flex items-center justify-center text-2xl font-bold border-2 border-moaon-darkgreen mb-6">02</div>
+                    <h4 class="text-xl font-bold mb-3">배송 주기 및 식재료 설정</h4>
+                    <p class="text-moaon-darkgreen/70">주 1회/격주 선택은 물론,<br/>알러지가 있거나 싫어하는 재료는 빼드려요.</p>
+                </div>
+                <!-- Step 3 -->
+                <div class="text-center flex flex-col items-center">
+                    <div class="w-24 h-24 bg-moaon-orange text-moaon-cream rounded-full flex items-center justify-center text-2xl font-bold mb-6">03</div>
+                    <h4 class="text-xl font-bold mb-3">신선하게 문 앞 배송</h4>
+                    <p class="text-moaon-darkgreen/70">낭비 없이 딱 필요한 만큼만<br/>매주 신선하게 받아보세요.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. 정기배송 상품 (둥근 카드 적용) -->
+    <section id="product" class="py-24">
+        <div class="max-w-7xl mx-auto px-6">
+            <h3 class="text-4xl font-bold mb-4">정기배송 상품 안내</h3>
+            <p class="text-lg text-moaon-darkgreen/70 mb-12">라이프스타일에 맞춘 3가지 소량 패키지</p>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Card 1 -->
+                <div class="bg-white rounded-3xl p-8 shadow-sm border border-moaon-darkgreen/10 flex flex-col">
+                    <div class="bg-gray-100 h-48 rounded-2xl mb-6 flex items-center justify-center text-gray-400">[ICON/IMG: 채소형]</div>
+                    <h4 class="text-2xl font-bold mb-2">프레시 채소형</h4>
+                    <p class="text-moaon-darkgreen/70 mb-6 flex-grow">요리를 즐겨 하는 1인 가구를 위한 신선한 소량 채소 모음</p>
+                    <button class="w-full py-3 bg-moaon-lightgreen rounded-xl font-bold text-moaon-darkgreen">자세히 보기 (비활성)</button>
+                </div>
+                <!-- Card 2 -->
+                <div class="bg-white rounded-3xl p-8 shadow-sm border border-moaon-darkgreen/10 flex flex-col relative overflow-hidden">
+                    <div class="absolute top-0 right-0 bg-moaon-orange text-white px-4 py-1 text-sm font-bold rounded-bl-xl">BEST</div>
+                    <div class="bg-gray-100 h-48 rounded-2xl mb-6 flex items-center justify-center text-gray-400">[ICON/IMG: 간편식형]</div>
+                    <h4 class="text-2xl font-bold mb-2">이지 간편식형</h4>
+                    <p class="text-moaon-darkgreen/70 mb-6 flex-grow">데우기만 하면 끝! 바쁜 직장인을 위한 반조리 식재료 위주</p>
+                    <button class="w-full py-3 bg-moaon-lightgreen rounded-xl font-bold text-moaon-darkgreen">자세히 보기 (비활성)</button>
+                </div>
+                <!-- Card 3 -->
+                <div class="bg-white rounded-3xl p-8 shadow-sm border border-moaon-darkgreen/10 flex flex-col">
+                    <div class="bg-gray-100 h-48 rounded-2xl mb-6 flex items-center justify-center text-gray-400">[ICON/IMG: 균형식형]</div>
+                    <h4 class="text-2xl font-bold mb-2">밸런스 균형식형</h4>
+                    <p class="text-moaon-darkgreen/70 mb-6 flex-grow">채소와 단백질, 탄수화물의 완벽한 1인분 영양 밸런스</p>
+                    <button class="w-full py-3 bg-moaon-lightgreen rounded-xl font-bold text-moaon-darkgreen">자세히 보기 (비활성)</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 6. 맞춤 설정 및 가격 (클라이언트 특별 요구사항) -->
+    <section class="py-24 border-t border-moaon-darkgreen/10">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16">
+                <!-- Left: Controls -->
+                <div>
+                    <h3 class="text-4xl font-bold mb-10">내 마음대로 설정하는<br/>나만의 정기배송</h3>
+                    
+                    <div class="mb-8">
+                        <label class="block text-sm font-bold mb-4">배송 주기 선택 (UI)</label>
+                        <div class="flex space-x-4">
+                            <button class="flex-1 py-4 border-2 border-moaon-darkgreen bg-moaon-darkgreen text-white rounded-xl font-bold">주 1회</button>
+                            <button class="flex-1 py-4 border-2 border-gray-300 text-gray-500 rounded-xl font-bold bg-white">격주 배송</button>
+                        </div>
+                    </div>
+
+                    <div>
+                        <label class="block text-sm font-bold mb-4">제외할 식재료 (UI 예시)</label>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-4 py-2 bg-gray-200 rounded-full text-sm">오이 ✕</span>
+                            <span class="px-4 py-2 bg-gray-200 rounded-full text-sm">고수 ✕</span>
+                            <button class="px-4 py-2 border border-dashed border-gray-400 text-gray-500 rounded-full text-sm">+ 추가</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right: Price -->
+                <div class="bg-moaon-darkgreen p-10 rounded-3xl text-white flex flex-col justify-center">
+                    <h4 class="text-2xl font-bold mb-2">예상 결제 금액</h4>
+                    <p class="text-moaon-lightgreen mb-8">프레시 채소형 / 주 1회 기준</p>
+                    
+                    <div class="flex justify-between items-end border-b border-white/20 pb-6 mb-6">
+                        <span class="text-lg">기본가 (월 4회)</span>
+                        <span class="line-through text-white/50 text-xl">59,600원</span>
+                    </div>
+                    <div class="flex justify-between items-end mb-8">
+                        <span class="text-xl font-bold text-moaon-orange">첫 체험 50% 할인가</span>
+                        <span class="text-5xl font-black text-moaon-orange">29,800<span class="text-2xl font-medium">원</span></span>
+                    </div>
+                    <p class="text-sm text-center text-white/70">* 런칭 기념 사전 신청자 한정 혜택입니다.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 7. 혜택 및 실제 배송 구성 예시 -->
+    <section class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-6 mb-12">
+            <h3 class="text-3xl font-bold">이번 주, 이런 식재료가 가요</h3>
+            <p class="text-moaon-darkgreen/70 mt-2">1인 가구 맞춤형 실제 배송 박스 예시</p>
+        </div>
+        <!-- 가로 스크롤 영역 -->
+        <div class="flex overflow-x-auto gap-6 px-6 pb-8 snap-x no-scrollbar" style="padding-left: max(1.5rem, calc((100% - 80rem) / 2 + 1.5rem)); padding-right: 1.5rem;">
+            <div class="shrink-0 w-72 md:w-96 snap-start">
+                <div class="bg-gray-200 h-64 rounded-2xl mb-4 flex items-center justify-center text-gray-400">[IMG: 채소 구성 예시]</div>
+                <h5 class="font-bold text-lg">1주차 프레시 팩</h5>
+                <p class="text-sm text-gray-500">방울토마토 200g, 양상추 반 통 외 3종</p>
+            </div>
+            <div class="shrink-0 w-72 md:w-96 snap-start">
+                <div class="bg-gray-200 h-64 rounded-2xl mb-4 flex items-center justify-center text-gray-400">[IMG: 간편식 구성 예시]</div>
+                <h5 class="font-bold text-lg">2주차 이지 팩</h5>
+                <p class="text-sm text-gray-500">밀키트(감바스 1인분), 손질 양파 외 2종</p>
+            </div>
+            <div class="shrink-0 w-72 md:w-96 snap-start">
+                <div class="bg-gray-200 h-64 rounded-2xl mb-4 flex items-center justify-center text-gray-400">[IMG: 균형식 구성 예시]</div>
+                <h5 class="font-bold text-lg">3주차 밸런스 팩</h5>
+                <p class="text-sm text-gray-500">닭가슴살 1팩, 미니 파프리카 외 4종</p>
+            </div>
+            <div class="shrink-0 w-72 md:w-96 snap-start">
+                <div class="bg-gray-200 h-64 rounded-2xl mb-4 flex items-center justify-center text-gray-400">[IMG: 패키징 박스 예시]</div>
+                <h5 class="font-bold text-lg">안전하고 신선한 패키징</h5>
+                <p class="text-sm text-gray-500">친환경 보냉재와 함께 문 앞까지</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 8. 체험단 기대평 (Risk 회피: 실제 후기 대체) -->
+    <section class="py-24 border-t border-moaon-darkgreen/10">
+        <div class="max-w-7xl mx-auto px-6 text-center">
+            <h3 class="text-4xl md:text-5xl font-serif font-black mb-16">
+                "혼자 사는 직장인에게<br/>이보다 완벽할 순 없어요"
+            </h3>
+            <p class="text-moaon-orange font-bold mb-12">- 사전 체험단 선정자들의 기대평 -</p>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-left">
+                <div class="bg-moaon-cream border border-moaon-darkgreen/10 p-8 rounded-2xl">
+                    <div class="flex text-moaon-orange mb-4">★★★★★</div>
+                    <p class="text-lg mb-6">"매번 마트에서 사면 반은 버렸는데, 딱 1인분만 온다니 식비 절약에 엄청 도움될 것 같아요. 빨리 런칭했으면 좋겠습니다!"</p>
+                    <p class="text-sm font-bold opacity-70">체험단 / 직장인 김*현 님</p>
+                </div>
+                <div class="bg-moaon-cream border border-moaon-darkgreen/10 p-8 rounded-2xl">
+                    <div class="flex text-moaon-orange mb-4">★★★★★</div>
+                    <p class="text-lg mb-6">"싫어하는 식재료를 뺄 수 있다는 게 정말 큰 장점이네요. 편식 심한 1인 가구에게 한 줄기 빛 같은 서비스입니다."</p>
+                    <p class="text-sm font-bold opacity-70">체험단 / 프리랜서 박*지 님</p>
+                </div>
+                <div class="bg-moaon-cream border border-moaon-darkgreen/10 p-8 rounded-2xl">
+                    <div class="flex text-moaon-orange mb-4">★★★★★</div>
+                    <p class="text-lg mb-6">"배송 주기를 격주로 바꿀 수 있어서 부담이 적어요. 외식이 잦은 주에는 건너뛸 수 있으니 아주 실용적입니다."</p>
+                    <p class="text-sm font-bold opacity-70">체험단 / 직장인 이*훈 님</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 9. FAQ -->
+    <section id="faq" class="py-24 bg-white">
+        <div class="max-w-3xl mx-auto px-6">
+            <h3 class="text-3xl font-bold mb-10 text-center">자주 묻는 질문</h3>
+            <div class="space-y-4">
+                <!-- 아코디언 항목 (와이어프레임 형태) -->
+                <div class="border border-gray-200 rounded-xl p-6 flex justify-between items-center cursor-pointer hover:border-moaon-darkgreen">
+                    <span class="font-bold">Q. 식재료 종류는 매주 바뀌나요?</span>
+                    <span class="text-2xl font-light">+</span>
+                </div>
+                <div class="border border-gray-200 rounded-xl p-6 flex justify-between items-center cursor-pointer hover:border-moaon-darkgreen">
+                    <span class="font-bold">Q. 원하지 않는 재료는 어떻게 제외하나요?</span>
+                    <span class="text-2xl font-light">+</span>
+                </div>
+                <div class="border border-gray-200 rounded-xl p-6 flex justify-between items-center cursor-pointer hover:border-moaon-darkgreen">
+                    <span class="font-bold">Q. 정기배송을 잠시 쉬어갈 수도 있나요?</span>
+                    <span class="text-2xl font-light">+</span>
+                </div>
+                <div class="border border-gray-200 rounded-xl p-6 flex justify-between items-center cursor-pointer hover:border-moaon-darkgreen">
+                    <span class="font-bold">Q. 첫 주문 50% 할인은 어떻게 적용되나요?</span>
+                    <span class="text-2xl font-light">+</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 10. 사전 신청 폼 (최하단 CTA) -->
+    <section id="register" class="py-32 bg-moaon-darkgreen text-white">
+        <div class="max-w-2xl mx-auto px-6 text-center">
+            <h2 class="text-4xl md:text-6xl font-black mb-6">지금 사전 신청하고<br/>첫 배송 50% 혜택받기</h2>
+            <p class="text-moaon-lightgreen mb-12 text-lg">서비스 런칭 시 알림 문자와 함께 반값 할인 쿠폰을 보내드립니다.</p>
+            
+            <form class="space-y-4 text-left bg-white/10 p-8 rounded-3xl backdrop-blur-sm">
+                <div>
+                    <label class="block text-sm mb-2 opacity-80">이름 (필수)</label>
+                    <input type="text" placeholder="홍길동" class="w-full bg-white text-gray-800 px-6 py-4 rounded-xl focus:outline-none focus:ring-2 focus:ring-moaon-orange">
+                </div>
+                <div>
+                    <label class="block text-sm mb-2 opacity-80">연락처 (필수)</label>
+                    <input type="tel" placeholder="010-0000-0000" class="w-full bg-white text-gray-800 px-6 py-4 rounded-xl focus:outline-none focus:ring-2 focus:ring-moaon-orange">
+                </div>
+                <div class="flex items-center space-x-3 pt-4 pb-6">
+                    <input type="checkbox" id="agree" class="w-5 h-5 accent-moaon-orange">
+                    <label for="agree" class="text-sm opacity-80">개인정보 수집 및 이용, 마케팅 수신에 동의합니다.</label>
+                </div>
+                <button type="button" class="w-full bg-moaon-orange hover:bg-orange-500 text-white font-bold text-xl py-5 rounded-xl transition shadow-lg">
+                    사전 신청 완료하기
+                </button>
+            </form>
+        </div>
+    </section>
+
+    <!-- 11. Footer -->
+    <footer class="bg-gray-900 text-gray-500 py-12 text-sm text-center">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="flex justify-center space-x-6 mb-6">
+                <a href="#" class="hover:text-gray-300">이용약관</a>
+                <a href="#" class="font-bold hover:text-gray-300">개인정보처리방침</a>
+                <a href="#" class="hover:text-gray-300">고객센터</a>
+            </div>
+            <p class="mb-2">모아온 | 대표: 윤서진</p>
+            <p>© 2026 MOAON. All rights reserved.</p>
+            <p class="mt-4 text-xs">※ 본 사이트는 2026년 10월 12일 정식 출시 전 사전 신청을 위한 페이지입니다.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
